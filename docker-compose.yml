@@ -1,0 +1,15 @@
+version: '3'
+services:
+  spring-app:
+    image: jalajasyale123/kaibur 
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_DATA_MONGODB_URI: "mongodb+srv://jalajasyale123:jalajasyale123@cluster0.q5wrltt.mongodb.net/ServerDB?retryWrites=true&w=majority"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - 27017:27017
